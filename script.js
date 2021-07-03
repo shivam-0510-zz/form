@@ -1,12 +1,45 @@
+window.addEventListener('load',()=>{
+
+    //Clearing personal details on reloading
+    name.value="";
+    fathername.value="";
+    mothername.value="";
+    rollNo.value="";
+
+    //Clearing English marks on reloading
+    sCode1.value="";
+    tMarks1.value="";
+    iMarks1.value="";
+
+    //Clearing Mathematics marks on reloading
+    sCode2.value="";
+    tMarks2.value="";
+    iMarks2.value="";
+
+    //Clearing Physics marks on reloading
+    sCode3.value="";
+    tMarks3.value="";
+    iMarks3.value="";
+
+    //Clearing Chemistry marks on reloading
+    sCode4.value="";
+    tMarks4.value="";
+    iMarks4.value="";
+
+    //Clearing Computer Science marks on reloading
+    sCode5.value="";
+    tMarks5.value="";
+    iMarks5.value="";
+});
+
+//Selecting items from html
 const html1 = document.querySelector('main');
 const btn = document.querySelector('button');
 const html2 = document.querySelector('.main-container');
-btn.addEventListener('click',()=>{
-    html1.style.display='none';
-    html2.style.display='block';
-const sno = document.querySelector('.sno');
-sno.innerHTML=Math.floor(100000 + Math.random() * 900000);
-    //Personal Details
+const loader = document.querySelector('.loader');
+const body = document.querySelector('body');
+
+//Personal Details
 let name = document.querySelector('#name');
 let fName = document.querySelector('#fathername');
 let mName = document.querySelector('#mothername');
@@ -17,12 +50,6 @@ let studName = document.querySelector('.Name');
 let fname = document.querySelector('.F-name');
 let mname = document.querySelector('.M-name');
 let rollno = document.querySelector('.Roll-No');
-
-//Getting data from form
-studName.innerText = name.value;
-fname.innerText = fName.value;
-mname.innerText = mName.value;
-rollno.innerText = rollNo.value;
 
 //English Marks Details
 let sCode1 = document.querySelector('#scode1');
@@ -48,6 +75,26 @@ let iMarks4 = document.querySelector('#imarks4');
 let sCode5 = document.querySelector('#scode5');
 let tMarks5 = document.querySelector('#tmarks5');
 let iMarks5 = document.querySelector('#imarks5');
+
+//Generate button
+btn.addEventListener('click',()=>{
+    html1.style.display='none';
+    html2.style.display='none';
+    loader.style.display='flex';
+    body.style.backgroundColor='white';
+    setTimeout(()=>{
+        html2.style.display='block';
+        loader.style.display='none';
+        body.style.backgroundColor = 'rgb(233, 233, 233)';
+    },2000);
+const sno = document.querySelector('.sno');
+sno.innerHTML=Math.floor(100000 + Math.random() * 900000);
+
+//Getting data from form
+studName.innerText = name.value;
+fname.innerText = fName.value;
+mname.innerText = mName.value;
+rollno.innerText = rollNo.value;
 
 //Create a table
 let table = document.querySelector('.tab');
@@ -283,8 +330,3 @@ else{
     result.innerHTML = "PASS";
 }
 })
-
-
-
-
-

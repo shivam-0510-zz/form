@@ -88,9 +88,11 @@
     .main-container{
         display: none;
         border: 1px solid black;
-        height: 800px;
+        height: 650px;
         width: 1000px;
-        margin:auto;
+        /* margin:auto; */
+        margin-top: 15px;
+        margin-left: 180px;
         background-color: rgb(239, 243, 245);
     }
     .table{
@@ -198,7 +200,16 @@
         margin-left: 64px;
         font-family: 'Courier New', Courier, monospace;
     }
-
+    .loader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+        display: none;
+    }
+    .loader iframe{
+        width: 200px;
+    }
 
     
  
